@@ -13,7 +13,7 @@ interface CategoryChartProps {
 const barColors: Record<string, string> = {
   Vendor: "bg-violet-500",
   Labour: "bg-blue-500",
-  Material: "bg-amber-500",
+  Material: "bg-primary",
   "Labour Attendance": "bg-emerald-500",
   "Material Stock": "bg-slate-500",
   Other: "bg-zinc-500",
@@ -22,7 +22,7 @@ const barColors: Record<string, string> = {
 const dotColors: Record<string, string> = {
   Vendor: "bg-violet-500",
   Labour: "bg-blue-500",
-  Material: "bg-amber-500",
+  Material: "bg-primary",
   "Labour Attendance": "bg-emerald-500",
   "Material Stock": "bg-slate-500",
   Other: "bg-zinc-500",
@@ -47,7 +47,7 @@ export function CategoryChart({ entries }: CategoryChartProps) {
     <Card className="border-border/50">
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center gap-2 text-base">
-          <BarChart3 className="h-4 w-4 text-amber-500" />
+          <BarChart3 className="h-4 w-4 text-primary" />
           Expenses by Category
         </CardTitle>
       </CardHeader>

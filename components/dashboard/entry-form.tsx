@@ -97,12 +97,12 @@ export function EntryForm({
         <CardTitle className="flex items-center gap-2 text-base">
           {editingEntry ? (
             <>
-              <Save className="h-4 w-4 text-amber-500" />
+              <Save className="h-4 w-4 text-primary" />
               Edit Entry
             </>
           ) : (
             <>
-              <Plus className="h-4 w-4 text-amber-500" />
+              <Plus className="h-4 w-4 text-primary" />
               Add New Entry
             </>
           )}
@@ -272,7 +272,7 @@ export function EntryForm({
           <div className="flex gap-2">
             <Button
               type="submit"
-              className="gap-1.5 bg-amber-500 text-white hover:bg-amber-600"
+              className="gap-1.5 bg-primary text-white hover:bg-primary/80"
             >
               {editingEntry ? (
                 <>

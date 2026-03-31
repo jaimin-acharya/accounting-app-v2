@@ -19,6 +19,7 @@ interface HeaderProps {
   onExportExcel: () => void;
   searchValue: string;
   onSearchChange: (value: string) => void;
+  hasEntries: boolean;
 }
 
 export function AppHeader({
@@ -27,6 +28,7 @@ export function AppHeader({
   onExportExcel,
   searchValue,
   onSearchChange,
+  hasEntries,
 }: HeaderProps) {
   const { resolvedTheme, setTheme } = useTheme();
   const isMobile = useIsMobile();
@@ -70,18 +72,20 @@ export function AppHeader({
           size="sm"
           className="hidden gap-1.5 text-xs sm:flex"
           onClick={onExportPDF}
+          disabled={!hasEntries}
         >
           <FileDown className="h-3.5 w-3.5" />
-          PDF
+          Export to PDF
         </Button>
         <Button
           variant="outline"
           size="sm"
           className="hidden gap-1.5 text-xs sm:flex"
           onClick={onExportExcel}
+          disabled={!hasEntries}
         >
           <FileSpreadsheet className="h-3.5 w-3.5" />
-          Excel
+          Export to Excel
         </Button>
         {/* Mobile export buttons */}
         <Button
@@ -89,6 +93,7 @@ export function AppHeader({
           size="icon"
           className="h-8 w-8 sm:hidden"
           onClick={onExportPDF}
+          disabled={!hasEntries}
         >
           <FileDown className="h-4 w-4" />
         </Button>
@@ -97,6 +102,7 @@ export function AppHeader({
           size="icon"
           className="h-8 w-8 sm:hidden"
           onClick={onExportExcel}
+          disabled={!hasEntries}
         >
           <FileSpreadsheet className="h-4 w-4" />
         </Button>

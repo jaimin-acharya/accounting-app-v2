@@ -52,7 +52,7 @@ function SidebarContent({
     <div className="flex h-full flex-col">
       {/* Logo */}
       <div className="flex h-16 items-center gap-3 border-b border-border/50 px-4">
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-md shadow-amber-500/20">
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-primary/80 shadow-md shadow-primary/20">
           <Building2 className="h-5 w-5 text-white" />
         </div>
         {!collapsed && (
@@ -78,18 +78,18 @@ function SidebarContent({
               className={cn(
                 "group relative flex w-full items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200",
                 isActive
-                  ? "bg-amber-500/10 text-amber-600 dark:text-amber-400 shadow-sm"
+                  ? "bg-primary/10 text-primary shadow-sm"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
               )}
             >
               {isActive && (
-                <div className="absolute left-0 top-1/2 h-6 w-[3px] -translate-y-1/2 rounded-r-full bg-amber-500" />
+                <div className="absolute left-0 top-1/2 h-6 w-[3px] -translate-y-1/2 rounded-r-full bg-primary" />
               )}
               <item.icon
                 className={cn(
                   "h-4.5 w-4.5 shrink-0 transition-colors",
                   isActive
-                    ? "text-amber-500"
+                    ? "text-primary"
                     : "text-muted-foreground group-hover:text-foreground"
                 )}
               />

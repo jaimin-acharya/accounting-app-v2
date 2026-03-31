@@ -63,10 +63,10 @@ export function StatsCards({ stats }: StatsCardsProps) {
       value: formatCurrency(stats.materialPurchases),
       rawValue: stats.materialPurchases,
       icon: Package,
-      gradient: "from-amber-500 to-orange-600",
-      bgGlow: "bg-amber-500/10",
-      iconBg: "bg-amber-500/15",
-      iconColor: "text-amber-500",
+      gradient: "from-primary to-primary/70",
+      bgGlow: "bg-primary/10",
+      iconBg: "bg-primary/15",
+      iconColor: "text-primary",
     },
     {
       label: "Labour Attendance",
@@ -161,16 +161,16 @@ export function StatsCards({ stats }: StatsCardsProps) {
             </div>
           </CardContent>
         </Card>
-        <Card className="border-amber-500/20 bg-amber-500/5">
+        <Card className="border-primary/20 bg-primary/5">
           <CardContent className="flex items-center gap-3 p-4">
-            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/15">
-              <Wallet className="h-5 w-5 text-amber-500" />
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/15">
+              <Wallet className="h-5 w-5 text-primary" />
             </div>
             <div>
               <p className="text-xs font-medium text-muted-foreground">
                 Balance
               </p>
-              <p className="text-lg font-bold text-amber-600 dark:text-amber-400">
+              <p className="text-lg font-bold text-primary">
                 {formatCurrency(stats.balance)}
               </p>
             </div>

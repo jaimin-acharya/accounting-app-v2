@@ -104,11 +104,34 @@ export default function DashboardPage() {
     toast.success("Entry deleted");
   }, []);
 
-  const handleEdit = useCallback((entry: Entry) => {
-    setEditingEntry(entry);
-    // Scroll to form
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }, []);
+  const handleEditFromPopup = useCallback(
+    (entry: Entry) => {
+      setEntries((prev) => {
+        const exists = prev.find((e) => e.id === entry.id);
+        if (exists) {
+          toast.success("Entry updated successfully");
+          return prev.map((e) => (e.id === entry.id ? entry : e));
+        } else {
+          toast.success("Entry duplicated successfully");
+          return [...prev, entry];
+        }
+      });
+    },
+    []
+  );
+
+  const handleDuplicate = useCallback(
+    (entry: Entry) => {
+      const duplicated: Entry = {
+        ...entry,
+        id: `${Date.now()}-${Math.random().toString(36).slice(2, 9)}`,
+        createdAt: new Date().toISOString(),
+      };
+      setEntries((prev) => [...prev, duplicated]);
+      toast.success("Entry duplicated successfully");
+    },
+    []
+  );
 
   const handleExportPDF = useCallback(() => {
     exportToPDF(filteredEntries);
@@ -157,7 +180,7 @@ export default function DashboardPage() {
     return (
       <div className="flex h-screen items-center justify-center bg-background">
         <div className="flex flex-col items-center gap-3">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-amber-500/30 border-t-amber-500" />
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary/30 border-t-primary" />
           <p className="text-sm text-muted-foreground">Loading...</p>
         </div>
       </div>
@@ -195,6 +218,7 @@ export default function DashboardPage() {
           onExportExcel={handleExportExcel}
           searchValue={search}
           onSearchChange={setSearch}
+          hasEntries={entries.length > 0}
         />
 
         <main className="space-y-6 p-4 md:p-6">
@@ -233,8 +257,9 @@ export default function DashboardPage() {
           {/* Table */}
           <EntriesTable
             entries={filteredEntries}
-            onEdit={handleEdit}
+            onEdit={handleEditFromPopup}
             onDelete={handleDelete}
+            onDuplicate={handleDuplicate}
           />
 
           {/* Footer */}

@@ -33,10 +33,10 @@ export function exportToPDF(entries: Entry[], title?: string): void {
   doc.setFontSize(11);
   doc.setTextColor(30, 41, 59);
   doc.text(
-    `Total Debit: ₹${totalDebit.toLocaleString("en-IN")}  |  Total Credit: ₹${totalCredit.toLocaleString("en-IN")}  |  Balance: ₹${(totalDebit - totalCredit).toLocaleString("en-IN")}`,
+    `Total Debit: ${totalDebit.toLocaleString("en-IN")} /-  |  Total Credit: ${totalCredit.toLocaleString("en-IN")} /-  | Balance: ${(totalDebit - totalCredit).toLocaleString("en-IN")} /-`,
     14,
     36
-  );
+  );  
 
   // Table
   const tableData = entries.map((entry) => [
@@ -45,7 +45,7 @@ export function exportToPDF(entries: Entry[], title?: string): void {
     entry.category,
     entry.partyName,
     entry.quantity.toString(),
-    `₹${entry.amount.toLocaleString("en-IN")}`,
+    `${entry.amount.toLocaleString("en-IN")} /-`,
     entry.transactionType,
     entry.notes,
   ]);
