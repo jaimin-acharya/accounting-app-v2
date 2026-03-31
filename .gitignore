@@ -31,6 +31,8 @@ pnpm-debug.log*
 # env files
 .env*.local
 
+PLAN.md
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
