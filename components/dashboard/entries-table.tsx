@@ -229,8 +229,8 @@ export function EntriesTable({ entries, onEdit, onDelete, onDuplicate }: Entries
                     className={cn(
                       "text-[10px] font-semibold",
                       entry.transactionType === "Debit"
-                        ? "border-rose-200 bg-rose-50 text-rose-600 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-400"
-                        : "border-emerald-200 bg-emerald-50 text-emerald-600 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-400"
+                        ? "border-emerald-200 bg-emerald-50 text-emerald-600 dark:border-emerald-500/30 dark:bg-emerald-500/10 dark:text-emerald-400"
+                        : "border-rose-200 bg-rose-50 text-rose-600 dark:border-rose-500/30 dark:bg-rose-500/10 dark:text-rose-400"
                     )}
                   >
                     {entry.transactionType}

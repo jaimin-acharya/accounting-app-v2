@@ -138,10 +138,10 @@ export function StatsCards({ stats }: StatsCardsProps) {
             </div>
             <div>
               <p className="text-xs font-medium text-muted-foreground">
-                Total Credit
+                Total Debit
               </p>
               <p className="text-lg font-bold text-emerald-600 dark:text-emerald-400">
-                {formatCurrency(stats.totalCredit)}
+                {formatCurrency(stats.totalDebit)}
               </p>
             </div>
           </CardContent>
@@ -153,10 +153,10 @@ export function StatsCards({ stats }: StatsCardsProps) {
             </div>
             <div>
               <p className="text-xs font-medium text-muted-foreground">
-                Total Debit
+                Total Credit
               </p>
               <p className="text-lg font-bold text-rose-600 dark:text-rose-400">
-                {formatCurrency(stats.totalDebit)}
+                {formatCurrency(stats.totalCredit)}
               </p>
             </div>
           </CardContent>

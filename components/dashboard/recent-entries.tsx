@@ -39,8 +39,8 @@ export function RecentEntries({ entries }: RecentEntriesProps) {
                   className={cn(
                     "shrink-0 text-[9px]",
                     entry.transactionType === "Debit"
-                      ? "border-rose-200 text-rose-600 dark:border-rose-500/30 dark:text-rose-400"
-                      : "border-emerald-200 text-emerald-600 dark:border-emerald-500/30 dark:text-emerald-400"
+                      ? "border-emerald-200 text-emerald-600 dark:border-emerald-500/30 dark:text-emerald-400"
+                      : "border-rose-200 text-rose-600 dark:border-rose-500/30 dark:text-rose-400"
                   )}
                 >
                   {entry.transactionType}
