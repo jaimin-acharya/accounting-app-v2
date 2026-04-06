@@ -272,7 +272,7 @@ export function EntryForm({
           <div className="flex gap-2">
             <Button
               type="submit"
-              className="gap-1.5 bg-primary text-white hover:bg-primary/80"
+              className="w-full sm:w-auto gap-1.5 bg-primary text-white hover:bg-primary/80"
             >
               {editingEntry ? (
                 <>
